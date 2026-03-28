@@ -42,9 +42,12 @@
 TERFARVI = 0.0.1
 VASRU = selzbasu
 RAFSTE = rafsi.tsv
+BAISTE = bai.tsv
 ROLSINXA = at bs noda
-GIMRAF = $(ROLSINXA:%=-%-gimrafsi.txt)
-RAFGIM = $(ROLSINXA:%=-%-rafgismu.txt)
+GIMRAF = $(ROLSINXA:%=-%-gismu-rafsi.txt)
+RAFGIM = $(ROLSINXA:%=-%-rafsi-gismu.txt)
+GIMBAI = $(ROLSINXA:%=-%-gismu-bai.txt)
+BAIGIM = $(ROLSINXA:%=-%-bai-gismu.txt)
 MKDIR = mkdir -p -- '$(@D)'
 SET = set -efu -o pipefail
 BREDI = \
@@ -53,8 +56,8 @@ BREDI = \
 		*'-at-'*) export SINXA='@';; \
 		*'-bs-'*) export SINXA='\';; \
 	esac;
-GBOARD = $(GIMRAF:%=$(VASRU)/gboard%) $(RAFGIM:%=$(VASRU)/gboard%)
-
+GBOARD = $(GIMRAF:%=$(VASRU)/gboard%) $(RAFGIM:%=$(VASRU)/gboard%) $(GIMBAI:%=$(VASRU)/gboard%) $(BAIGIM:%=$(VASRU)/gboard%)
+GBOARD_ZBASU = { awk -F '\t' -- 'BEGIN { print("\# Gboard Dictionary version:2"); print("\# Gboard Dictionary format:shortcut	word	language_tag	pos_tag"); } { printf("%s\t%s\tjbo\t\n", ENVIRON["SINXA"] $$1, $$2); }' | sort -o '$(@)'; }
 
 # zbasu
 # =====
@@ -67,10 +70,16 @@ ro: gboard
 gboard: $(GBOARD)
 
 $(GIMRAF:%=$(VASRU)/gboard%): $(RAFSTE)
-	$(BREDI) awk -F '\t' -- 'BEGIN { print("# Gboard Dictionary version:2"); print("# Gboard Dictionary format:shortcut	word	language_tag	pos_tag"); } { printf("%s\t%s\tjbo\t\n", ENVIRON["SINXA"] $$1, $$2); }' '$(<)' | sort -o '$(@)'
+	$(BREDI) $(GBOARD_ZBASU) <'$(<)'
 
 $(RAFGIM:%=$(VASRU)/gboard%): $(RAFSTE)
-	$(BREDI) awk -F '\t' -- 'BEGIN { print("# Gboard Dictionary version:2"); print("# Gboard Dictionary format:shortcut	word	language_tag	pos_tag"); } { printf("%s\t%s\tjbo\t\n", ENVIRON["SINXA"] $$2, $$1); }' '$(<)' | sort -o '$(@)'
+	$(BREDI) awk -- '{ printf("%s\t%s\n", $$2, $$1); }' '$(<)' | $(GBOARD_ZBASU)
+
+$(GIMBAI:%=$(VASRU)/gboard%): $(BAISTE)
+	$(BREDI) $(GBOARD_ZBASU) <'$(<)'
+
+$(BAIGIM:%=$(VASRU)/gboard%): $(BAISTE)
+	$(BREDI) awk -- '{ printf("%s\t%s\n", $$2, $$1); }' '$(<)' | $(GBOARD_ZBASU)
 
 # vimcu
 # =====
