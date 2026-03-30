@@ -14,7 +14,7 @@
 ##
 ##   id - cb29c2da-5cf5-4032-a0ce-bfbc95a8d927
 ##   author - <qq542vev at https://purl.org/meta/me/>
-##   version - 0.0.1
+##   version - 0.1.0
 ##   created - 2026-03-28
 ##   modified - 2026-03-28
 ##   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
@@ -39,11 +39,11 @@
 # Macro
 # =====
 
-TERFARVI = 0.0.1
+TERFARVI = 0.1.0
 VASRU = selzbasu
 RAFSTE = rafsi.tsv
 BAISTE = bai.tsv
-ROLSINXA = at bs noda
+ROLSINXA = at bs ziho
 GIMRAF = $(ROLSINXA:%=-%-gismu-rafsi.txt)
 RAFGIM = $(ROLSINXA:%=-%-rafsi-gismu.txt)
 GIMBAI = $(ROLSINXA:%=-%-gismu-bai.txt)
@@ -57,7 +57,7 @@ BREDI = \
 		*'-bs-'*) export SINXA='\';; \
 	esac;
 GBOARD = $(GIMRAF:%=$(VASRU)/gboard%) $(RAFGIM:%=$(VASRU)/gboard%) $(GIMBAI:%=$(VASRU)/gboard%) $(BAIGIM:%=$(VASRU)/gboard%)
-GBOARD_ZBASU = { awk -F '\t' -- 'BEGIN { print("\# Gboard Dictionary version:2"); print("\# Gboard Dictionary format:shortcut	word	language_tag	pos_tag"); } { printf("%s\t%s\tjbo\t\n", ENVIRON["SINXA"] $$1, $$2); }' | LANG=C sort -o '$(@)'; }
+GBOARD_ZBASU = { echo '\# Gboard Dictionary version:2'; echo '\# Gboard Dictionary format:shortcut	word	language_tag	pos_tag'; awk -F '\t' -- '{ printf("%s\t%s\tjbo\t\n", ENVIRON["SINXA"] $$1, $$2); }' | LANG=C sort; } >'$(@)'
 
 # zbasu
 # =====
