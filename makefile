@@ -14,9 +14,9 @@
 ##
 ##   id - cb29c2da-5cf5-4032-a0ce-bfbc95a8d927
 ##   author - <qq542vev at https://purl.org/meta/me/>
-##   version - 0.1.0
+##   version - 0.2.0
 ##   created - 2026-03-28
-##   modified - 2026-03-28
+##   modified - 2026-03-31
 ##   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
 ##   license - <GPL-3.0-only at https://www.gnu.org/licenses/gpl-3.0.txt>
 ##   depends - awk, echo, rm, sort
@@ -39,7 +39,7 @@
 # Macro
 # =====
 
-TERFARVI = 0.1.0
+TERFARVI = 0.2.0
 VASRU = selzbasu
 RAFSTE = rafsi.tsv
 BAISTE = bai.tsv
@@ -81,6 +81,12 @@ $(GIMBAI:%=$(VASRU)/gboard%): $(BAISTE)
 $(BAIGIM:%=$(VASRU)/gboard%): $(BAISTE)
 	$(BREDI) awk -- '{ printf("%s\t%s\n", $$2, $$1); }' '$(<)' | $(GBOARD_ZBASU)
 
+# drata
+# -----
+
+LICENSE.txt:
+	curl -sSfLo '$(@)' -- 'https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt'
+
 # vimcu
 # =====
 
@@ -108,4 +114,4 @@ sidju:
 	echo "  terfarvi jarco lo te farvi datni"
 
 terfarvi:
-	echo $(TERFARVI)
+	echo '$(TERFARVI)'
