@@ -57,7 +57,7 @@ BREDI = \
 		*'-bs-'*) export SINXA='\';; \
 	esac;
 GBOARD = $(GIMRAF:%=$(VASRU)/gboard%) $(RAFGIM:%=$(VASRU)/gboard%) $(GIMBAI:%=$(VASRU)/gboard%) $(BAIGIM:%=$(VASRU)/gboard%)
-GBOARD_ZBASU = { echo '\# Gboard Dictionary version:2'; echo '\# Gboard Dictionary format:shortcut	word	language_tag	pos_tag'; awk -F '\t' -- '{ printf("%s\t%s\tjbo\t\n", ENVIRON["SINXA"] $$1, $$2); }' | LANG=C sort; } >'$(@)'
+GBOARD_ZBASU = { echo '\# Gboard Dictionary version:2'; echo '\# Gboard Dictionary format:shortcut	word	language_tag	pos_tag'; awk -F '\t' -- '{ printf("%s\t%s\t\t\n", ENVIRON["SINXA"] $$1, $$2); }' | LANG=C sort; } >'$(@)'
 
 # zbasu
 # =====
