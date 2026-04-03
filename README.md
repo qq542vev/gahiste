@@ -15,7 +15,7 @@ Metadata:
 See Also:
 
   * <Project homepage at https://github.com/qq542vev/gahiste>
-  * <Bag report at t https://github.com/qq542vev/gahiste/issues>
+  * <Bag report at https://github.com/qq542vev/gahiste/issues>
 -->
 
 # .i ga'iste
