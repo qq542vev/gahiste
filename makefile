@@ -14,9 +14,9 @@
 ##
 ##   id - cb29c2da-5cf5-4032-a0ce-bfbc95a8d927
 ##   author - <qq542vev at https://purl.org/meta/me/>
-##   version - 0.3.0
+##   version - 0.3.1
 ##   created - 2026-03-28
-##   modified - 2026-04-02
+##   modified - 2026-04-03
 ##   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
 ##   license - <GPL-3.0-only at https://www.gnu.org/licenses/gpl-3.0.txt>
 ##   depends - awk, echo, find, git, glab, rm, sort
@@ -100,11 +100,11 @@ zahurehu: vimcu
 # =====
 
 jarco: ro
-	glab --name ".i li $(NAMCU) velfarvi sinxa" --notes "$$(git tag -l '$(NAMCU)' --format='%(contents)')" --no-update --use-package-registry $$(find "$(VASRU)" -name '*.txt' -type f | LANG=C sort)
+	glab release create '$(NAMCU)' --name ".i li $(NAMCU) velfarvi sinxa" --notes "$$(git tag -l '$(NAMCU)' --format='%(contents)')" --no-update --use-package-registry $$(find "$(VASRU)" -name '*.txt' -type f | LANG=C sort)
 
 mipri:
-	if glab release view "$(TCITA)" >/dev/null 2>&1; then \
-		glab release delete "$(TCITA)" -y; \
+	if glab release view '$(NAMCU)' >/dev/null 2>&1; then \
+		glab release delete '$(NAMCU)' -y; \
 	fi
 
 # notci
