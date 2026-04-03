@@ -32,7 +32,7 @@
 
 .POSIX:
 
-.PHONY: ro gboard vimcu zahurehu jarco mipri sidju velfarvi
+.PHONY: ro gboard vimcu zahurehu gubni mipri sidju velfarvi
 
 .SILENT: sidju velfarvi
 
@@ -96,10 +96,10 @@ vimcu:
 zahurehu: vimcu
 	$(MAKE)
 
-# jarco
+# gubni
 # =====
 
-jarco: ro
+gubni: ro
 	glab release create '$(NAMCU)' --name ".i li $(NAMCU) velfarvi sinxa" --notes "$$(git tag -l '$(NAMCU)' --format='%(contents)')" --no-update --use-package-registry $$(find "$(VASRU)" -name '*.txt' -type f | LANG=C sort)
 
 mipri:
@@ -121,8 +121,8 @@ sidju:
 	echo "  gboard   zbasu lo se pilno be la'o zoi Gboard zoi"
 	echo "  vimcu    vimcu lo se zbasu"
 	echo "  zahurehu za'u re'u zbasu"
-	echo "  jarco    jarco tu'a lo se zbasu"
-	echo "  mipri    mipri tu'a lo se zbasu"
+	echo "  gubni    lo se zbasu cu co'a gubni"
+	echo "  mipri    mipri lo gubni"
 	echo "  sidju    jarco tu'a lo ti sidju notci"
 	echo "  velfarvi jarco tu'a lo ve farvi datni"
 
