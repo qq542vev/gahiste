@@ -6,9 +6,9 @@ Metadata:
 
   id - be6a6293-5a7e-4504-8495-fc4394db100b
   author - <qq542vev at https://purl.org/meta/me/>
-  version - 0.1.0
+  version - 0.1.1
   created - 2026-04-01
-  modified - 2026-04-01
+  modified - 2026-04-03
   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
   license - <CC-BY-SA-4.0 at https://creativecommons.org/licenses/by-sa/4.0/>
 
@@ -58,13 +58,13 @@ zoi
 
 .i ci lo liste klesi cu zasti tu'a ru
 
- * .i se cmene be zoi zoi `\*-at-\*.txt` zoi zo'u
+ * .i se cmene be zoi zoi `*-at-*.txt` zoi zo'u
    * zoi zoi `@` zoi lidne lerfu
    * mu'u la'o zoi `@bau ⇄ bangu` zoi
- * .i se cmene be zoi zoi `\*-bs-\*.txt` zoi zo'u
+ * .i se cmene be zoi zoi `*-bs-*.txt` zoi zo'u
    * zoi zoi `\` zoi lidne lerfu
    * mu'u la'o zoi `\bau ⇄ bangu` zoi
- * .i se cmene be zoi zoi `\*-zi'o-\*.txt` zoi zo'u
+ * .i se cmene be zoi zoi `*-zi'o-*.txt` zoi zo'u
    * noda lidne lerfu
    * mu'u la'o zoi `bau ⇄ bangu` zoi
 
