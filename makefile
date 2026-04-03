@@ -14,7 +14,7 @@
 ##
 ##   id - cb29c2da-5cf5-4032-a0ce-bfbc95a8d927
 ##   author - <qq542vev at https://purl.org/meta/me/>
-##   version - 0.3.1
+##   version - 0.3.2
 ##   created - 2026-03-28
 ##   modified - 2026-04-03
 ##   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
@@ -120,11 +120,11 @@ sidju:
 	echo "  ro       zbasu ro da"
 	echo "  gboard   zbasu lo se pilno be la'o zoi Gboard zoi"
 	echo "  vimcu    vimcu lo se zbasu"
+	echo "  zahurehu za'u re'u zbasu"
 	echo "  jarco    jarco tu'a lo se zbasu"
 	echo "  mipri    mipri tu'a lo se zbasu"
-	echo "  zahurehu za'u re'u zbasu"
-	echo "  sidju    jarco lo ti sidju notci"
-	echo "  velfarvi jarco lo te farvi datni"
+	echo "  sidju    jarco tu'a lo ti sidju notci"
+	echo "  velfarvi jarco tu'a lo ve farvi datni"
 
 velfarvi:
 	echo '$(NAMCU)'
