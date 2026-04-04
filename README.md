@@ -6,9 +6,9 @@ Metadata:
 
   id - be6a6293-5a7e-4504-8495-fc4394db100b
   author - <qq542vev at https://purl.org/meta/me/>
-  version - 0.1.1
+  version - 0.1.2
   created - 2026-04-01
-  modified - 2026-04-03
+  modified - 2026-04-04
   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
   license - <CC-BY-SA-4.0 at https://creativecommons.org/licenses/by-sa/4.0/>
 
@@ -20,7 +20,7 @@ See Also:
 
 # .i ga'iste
 
-.i le ga'iste cu me lo liste noi la'o zoi IME zoi pilno ke'a lo nu galfi lo rafsi .e lo bais zei valsi lo lojbo valsi soi vo'e vo'i .i ka'e frili galfi mu'u la'o zoi
+.i le ga'iste cu me lo liste noi la'o zoi IME zoi pilno ke'a lo nu galfi lo rafsi .e lo bais zei valsi .e lo bais zei valsi lo lojbo valsi soi vo'e vo'i .i ka'e frili galfi mu'u la'o zoi
 
 ```
 pre  ⇄ prenu
@@ -34,6 +34,13 @@ bai   ⇄ bapli
 pi'o  ⇄ pilno
 kai   ⇄ ckaji
 sekai ⇄ selckaji
+```
+
+```
+du'u ⇄ bridi
+nu   ⇄ fasnu
+ka   ⇄ ckaji
+su'u ⇄ sucta
 ```
 
 zoi
@@ -60,10 +67,13 @@ zoi
 
  * .i se cmene be zoi zoi `*-at-*.txt` zoi zo'u
    * zoi zoi `@` zoi lidne lerfu
-   * mu'u la'o zoi `@bau ⇄ bangu` zoi
+   * mu'u la'o zoi `@bau ⇄ @bangu` zoi
  * .i se cmene be zoi zoi `*-bs-*.txt` zoi zo'u
    * zoi zoi `\` zoi lidne lerfu
-   * mu'u la'o zoi `\bau ⇄ bangu` zoi
+   * mu'u la'o zoi `\bau ⇄ \bangu` zoi
+ * .i se cmene be zoi zoi `*-em-*.txt` zoi zo'u
+   * zoi zoi `!` zoi lidne lerfu
+   * mu'u la'o zoi `!bau ⇄ !bangu` zoi
  * .i se cmene be zoi zoi `*-zi'o-*.txt` zoi zo'u
    * noda lidne lerfu
    * mu'u la'o zoi `bau ⇄ bangu` zoi
