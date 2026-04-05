@@ -46,6 +46,9 @@ BAISTE = bai.tsv
 NUNSTE = nu.tsv
 PURSTE = pu.tsv
 FAHASTE = faha.tsv
+VIHASTE = viha.tsv
+TAHESTE = tahe.tsv
+ROISTE = roi.tsv
 ROLSINXA = at bs em ziho
 GIMRAF = $(ROLSINXA:%=-%-gismu-rafsi.txt)
 RAFGIM = $(ROLSINXA:%=-%-rafsi-gismu.txt)
@@ -57,6 +60,12 @@ GIMPUR = $(ROLSINXA:%=-%-gismu-pu.txt)
 PURGIM = $(ROLSINXA:%=-%-pu-gismu.txt)
 GIMFAHA = $(ROLSINXA:%=-%-gismu-faha.txt)
 FAHAGIM = $(ROLSINXA:%=-%-faha-gismu.txt)
+GIMVIHA = $(ROLSINXA:%=-%-gismu-viha.txt)
+VIHAGIM = $(ROLSINXA:%=-%-viha-gismu.txt)
+GIMTAHE = $(ROLSINXA:%=-%-gismu-tahe.txt)
+TAHEGIM = $(ROLSINXA:%=-%-tahe-gismu.txt)
+GIMROI = $(ROLSINXA:%=-%-gismu-roi.txt)
+ROIGIM = $(ROLSINXA:%=-%-roi-gismu.txt)
 MKDIR = mkdir -p -- '$(@D)'
 SET = set -efu -o pipefail
 BREDI = \
@@ -66,12 +75,15 @@ BREDI = \
 		*'-bs-'*) export SINXA='\';; \
 		*'-em-'*) export SINXA='!';; \
 	esac;
-GBOARD = $(GIMRAF:%=$(VASRU)/gboard%) $(RAFGIM:%=$(VASRU)/gboard%) $(GIMBAI:%=$(VASRU)/gboard%) $(BAIGIM:%=$(VASRU)/gboard%) $(GIMNUN:%=$(VASRU)/gboard%) $(NUNGIM:%=$(VASRU)/gboard%) $(GIMPUR:%=$(VASRU)/gboard%) $(PURGIM:%=$(VASRU)/gboard%) $(GIMFAHA:%=$(VASRU)/gboard%) $(FAHAGIM:%=$(VASRU)/gboard%)
+ROLSTE = $(GIMRAF) $(RAFGIM) $(GIMBAI) $(BAIGIM) $(GIMNUN) $(NUNGIM) $(GIMPUR) $(PURGIM) $(GIMFAHA) $(FAHAGIM) $(GIMVIHA) $(VIHAGIM) $(GIMTAHE) $(TAHEGIM) $(GIMROI) $(ROIGIM)
+GBOARD_LISTE = $(ROLSTE:%=$(VASRU)/gboard%)
 GBOARD_ZBASU = { \
 	echo '\# Gboard Dictionary version:2'; \
 	echo '\# Gboard Dictionary format:shortcut	word	language_tag	pos_tag'; \
 	awk -F '\t' -- '{ printf("%s\t%s\t\t\n", ENVIRON["SINXA"] $$1, $$2); }' | LANG=C sort; \
 } >'$(@)'
+GBOARD_XIPA = $(BREDI) $(GBOARD_ZBASU) <'$(<)'
+GBOARD_XIRE = $(BREDI) awk -- '{ printf("%s\t%s\n", $$2, $$1); }' '$(<)' | $(GBOARD_ZBASU)
 
 # zbasu
 # =====
@@ -81,37 +93,55 @@ ro: gboard
 # Gboard
 # ------
 
-gboard: $(GBOARD)
+gboard: $(GBOARD_LISTE)
 
 $(GIMRAF:%=$(VASRU)/gboard%): $(RAFSTE)
-	$(BREDI) $(GBOARD_ZBASU) <'$(<)'
+	$(GBOARD_XIPA)
 
 $(RAFGIM:%=$(VASRU)/gboard%): $(RAFSTE)
-	$(BREDI) awk -- '{ printf("%s\t%s\n", $$2, $$1); }' '$(<)' | $(GBOARD_ZBASU)
+	$(GBOARD_XIRE)
 
 $(GIMBAI:%=$(VASRU)/gboard%): $(BAISTE)
-	$(BREDI) $(GBOARD_ZBASU) <'$(<)'
+	$(GBOARD_XIPA)
 
 $(BAIGIM:%=$(VASRU)/gboard%): $(BAISTE)
-	$(BREDI) awk -- '{ printf("%s\t%s\n", $$2, $$1); }' '$(<)' | $(GBOARD_ZBASU)
+	$(GBOARD_XIRE)
 
 $(GIMNUN:%=$(VASRU)/gboard%): $(NUNSTE)
-	$(BREDI) $(GBOARD_ZBASU) <'$(<)'
+	$(GBOARD_XIPA)
 
 $(NUNGIM:%=$(VASRU)/gboard%): $(NUNSTE)
-	$(BREDI) awk -- '{ printf("%s\t%s\n", $$2, $$1); }' '$(<)' | $(GBOARD_ZBASU)
+	$(GBOARD_XIRE)
 
 $(GIMPUR:%=$(VASRU)/gboard%): $(PURSTE)
-	$(BREDI) $(GBOARD_ZBASU) <'$(<)'
+	$(GBOARD_XIPA)
 
 $(PURGIM:%=$(VASRU)/gboard%): $(PURSTE)
-	$(BREDI) awk -- '{ printf("%s\t%s\n", $$2, $$1); }' '$(<)' | $(GBOARD_ZBASU)
+	$(GBOARD_XIRE)
 
 $(GIMFAHA:%=$(VASRU)/gboard%): $(FAHASTE)
-	$(BREDI) $(GBOARD_ZBASU) <'$(<)'
+	$(GBOARD_XIPA)
 
 $(FAHAGIM:%=$(VASRU)/gboard%): $(FAHASTE)
-	$(BREDI) awk -- '{ printf("%s\t%s\n", $$2, $$1); }' '$(<)' | $(GBOARD_ZBASU)
+	$(GBOARD_XIRE)
+
+$(GIMVIHA:%=$(VASRU)/gboard%): $(VIHASTE)
+	$(GBOARD_XIPA)
+
+$(VIHAGIM:%=$(VASRU)/gboard%): $(VIHASTE)
+	$(GBOARD_XIRE)
+
+$(GIMTAHE:%=$(VASRU)/gboard%): $(TAHESTE)
+	$(GBOARD_XIPA)
+
+$(TAHEGIM:%=$(VASRU)/gboard%): $(TAHESTE)
+	$(GBOARD_XIRE)
+
+$(GIMROI:%=$(VASRU)/gboard%): $(ROISTE)
+	$(GBOARD_XIPA)
+
+$(ROIGIM:%=$(VASRU)/gboard%): $(ROISTE)
+	$(GBOARD_XIRE)
 
 # drata
 # -----
@@ -123,7 +153,7 @@ LICENSE.txt:
 # =====
 
 vimcu:
-	rm -f -- $(GBOARD)
+	rm -f -- $(GBOARD_LISTE)
 
 zahurehu: vimcu
 	$(MAKE)
