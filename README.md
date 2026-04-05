@@ -20,13 +20,15 @@ See Also:
 
 # .i ga'iste
 
-.i le ga'iste cu me lo liste noi la'o zoi IME zoi pilno ke'a lo nu galfi lo rafsi .e lo bais zei valsi .e lo bais zei valsi lo lojbo valsi soi vo'e vo'i .i ka'e frili galfi mu'u la'o zoi
+.i le ga'iste cu me lo liste noi la'o zoi IME zoi pilno ke'a lo nu galfi lo rafsi .e lo bais zei valsi .e lo bais zei valsi .e lo pus zei valsi .e lo fa'as zei valsi lo lojbo valsi soi vo'e vo'i .i ka'e frili galfi mu'u la'o zoi
 
 ```
 pre  ⇄ prenu
 jbo  ⇄ lojbo
 muj  ⇄ munje
 mu'e ⇄ munje
+mov  ⇄ mo'i
+pav  ⇄ pa
 ```
 
 ```
@@ -41,6 +43,12 @@ du'u ⇄ bridi
 nu   ⇄ fasnu
 ka   ⇄ ckaji
 su'u ⇄ sucta
+```
+
+```
+pu purci
+ca cabna
+ba balvi
 ```
 
 zoi

@@ -14,9 +14,9 @@
 ##
 ##   id - cb29c2da-5cf5-4032-a0ce-bfbc95a8d927
 ##   author - <qq542vev at https://purl.org/meta/me/>
-##   version - 0.4.0
+##   version - 0.5.0
 ##   created - 2026-03-28
-##   modified - 2026-04-03
+##   modified - 2026-04-05
 ##   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
 ##   license - <GPL-3.0-only at https://www.gnu.org/licenses/gpl-3.0.txt>
 ##   depends - awk, echo, find, git, glab, rm, sort
@@ -39,11 +39,13 @@
 # Macro
 # =====
 
-NAMCU = 1.1.0
+NAMCU = 1.2.0
 VASRU = selzbasu
 RAFSTE = rafsi.tsv
 BAISTE = bai.tsv
 NUNSTE = nu.tsv
+PURSTE = pu.tsv
+FAHASTE = faha.tsv
 ROLSINXA = at bs em ziho
 GIMRAF = $(ROLSINXA:%=-%-gismu-rafsi.txt)
 RAFGIM = $(ROLSINXA:%=-%-rafsi-gismu.txt)
@@ -51,6 +53,10 @@ GIMBAI = $(ROLSINXA:%=-%-gismu-bai.txt)
 BAIGIM = $(ROLSINXA:%=-%-bai-gismu.txt)
 GIMNUN = $(ROLSINXA:%=-%-gismu-nu.txt)
 NUNGIM = $(ROLSINXA:%=-%-nu-gismu.txt)
+GIMPUR = $(ROLSINXA:%=-%-gismu-pu.txt)
+PURGIM = $(ROLSINXA:%=-%-pu-gismu.txt)
+GIMFAHA = $(ROLSINXA:%=-%-gismu-faha.txt)
+FAHAGIM = $(ROLSINXA:%=-%-faha-gismu.txt)
 MKDIR = mkdir -p -- '$(@D)'
 SET = set -efu -o pipefail
 BREDI = \
@@ -60,7 +66,7 @@ BREDI = \
 		*'-bs-'*) export SINXA='\';; \
 		*'-em-'*) export SINXA='!';; \
 	esac;
-GBOARD = $(GIMRAF:%=$(VASRU)/gboard%) $(RAFGIM:%=$(VASRU)/gboard%) $(GIMBAI:%=$(VASRU)/gboard%) $(BAIGIM:%=$(VASRU)/gboard%) $(GIMNUN:%=$(VASRU)/gboard%) $(NUNGIM:%=$(VASRU)/gboard%)
+GBOARD = $(GIMRAF:%=$(VASRU)/gboard%) $(RAFGIM:%=$(VASRU)/gboard%) $(GIMBAI:%=$(VASRU)/gboard%) $(BAIGIM:%=$(VASRU)/gboard%) $(GIMNUN:%=$(VASRU)/gboard%) $(NUNGIM:%=$(VASRU)/gboard%) $(GIMPUR:%=$(VASRU)/gboard%) $(PURGIM:%=$(VASRU)/gboard%) $(GIMFAHA:%=$(VASRU)/gboard%) $(FAHAGIM:%=$(VASRU)/gboard%)
 GBOARD_ZBASU = { \
 	echo '\# Gboard Dictionary version:2'; \
 	echo '\# Gboard Dictionary format:shortcut	word	language_tag	pos_tag'; \
@@ -93,6 +99,18 @@ $(GIMNUN:%=$(VASRU)/gboard%): $(NUNSTE)
 	$(BREDI) $(GBOARD_ZBASU) <'$(<)'
 
 $(NUNGIM:%=$(VASRU)/gboard%): $(NUNSTE)
+	$(BREDI) awk -- '{ printf("%s\t%s\n", $$2, $$1); }' '$(<)' | $(GBOARD_ZBASU)
+
+$(GIMPUR:%=$(VASRU)/gboard%): $(PURSTE)
+	$(BREDI) $(GBOARD_ZBASU) <'$(<)'
+
+$(PURGIM:%=$(VASRU)/gboard%): $(PURSTE)
+	$(BREDI) awk -- '{ printf("%s\t%s\n", $$2, $$1); }' '$(<)' | $(GBOARD_ZBASU)
+
+$(GIMFAHA:%=$(VASRU)/gboard%): $(FAHASTE)
+	$(BREDI) $(GBOARD_ZBASU) <'$(<)'
+
+$(FAHAGIM:%=$(VASRU)/gboard%): $(FAHASTE)
 	$(BREDI) awk -- '{ printf("%s\t%s\n", $$2, $$1); }' '$(<)' | $(GBOARD_ZBASU)
 
 # drata
