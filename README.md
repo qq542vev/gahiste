@@ -6,9 +6,9 @@ Metadata:
 
   id - be6a6293-5a7e-4504-8495-fc4394db100b
   author - <qq542vev at https://purl.org/meta/me/>
-  version - 0.1.2
+  version - 0.1.3
   created - 2026-04-01
-  modified - 2026-04-04
+  modified - 2026-04-06
   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
   license - <CC-BY-SA-4.0 at https://creativecommons.org/licenses/by-sa/4.0/>
 
@@ -94,7 +94,7 @@ NU ⇄ gismu
 
 ```
 nu   ⇄ fasnu
-mu'e ⇄ mulno
+mu'e ⇄ mokca
 jei  ⇄ jetnu
 su'u ⇄ sucta
 ```
