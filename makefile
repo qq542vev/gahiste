@@ -14,7 +14,7 @@
 ##
 ##   id - cb29c2da-5cf5-4032-a0ce-bfbc95a8d927
 ##   author - <qq542vev at https://purl.org/meta/me/>
-##   version - 0.6.0
+##   version - 0.6.1
 ##   created - 2026-03-28
 ##   modified - 2026-04-06
 ##   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
@@ -194,7 +194,7 @@ LICENSE.txt:
 # =====
 
 vimcu:
-	rm -f -- $(GBOARD_LISTE) '$(GBOARD_ZIP)'
+	rm -f -- $(GBOARD_LISTE:%='%') '$(GBOARD_ZIP)'
 
 zahurehu: vimcu
 	$(MAKE)
