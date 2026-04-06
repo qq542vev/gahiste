@@ -14,7 +14,7 @@
 ##
 ##   id - cb29c2da-5cf5-4032-a0ce-bfbc95a8d927
 ##   author - <qq542vev at https://purl.org/meta/me/>
-##   version - 0.5.0
+##   version - 0.6.0
 ##   created - 2026-03-28
 ##   modified - 2026-04-06
 ##   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
@@ -39,22 +39,24 @@
 # Macro
 # =====
 
+CMENE = gahiste
 NAMCU = 1.2.0
-VASRU = selzbasu
+SELPRUCE = selpruce
+TERPRUCE = terpruce
 
-# krasi datni
-# -----------
+# terpruce
+# --------
 
-GIMRAFSTE = gimrafsi.tsv
-MAHORAFSTE = mahorafsi.tsv
-BAISTE = bai.tsv
-FAHASTE = faha.tsv
-PURSTE = pu.tsv
-VIHASTE = viha.tsv
-TAHESTE = tahe.tsv
-ROISTE = roi.tsv
-NUNSTE = nu.tsv
-CAISTE = cai.tsv
+GIMRAFSTE = $(TERPRUCE)/gimrafsi.tsv
+MAHORAFSTE = $(TERPRUCE)/mahorafsi.tsv
+BAISTE = $(TERPRUCE)/bai.tsv
+FAHASTE = $(TERPRUCE)/faha.tsv
+PURSTE = $(TERPRUCE)/pu.tsv
+VIHASTE = $(TERPRUCE)/viha.tsv
+TAHESTE = $(TERPRUCE)/tahe.tsv
+ROISTE = $(TERPRUCE)/roi.tsv
+NUNSTE = $(TERPRUCE)/nu.tsv
+CAISTE = $(TERPRUCE)/cai.tsv
 
 # cmene morna
 # -----------
@@ -99,8 +101,8 @@ ZIP = zip -9FS '$(@)' $(^)
 # Gboard
 # ------
 
-GBOARD_LISTE = $(ROLSTE:%=$(VASRU)/gboard%)
-GBOARD_ZIP = $(VASRU)/gihiste-$(NAMCU)-gboard.zip
+GBOARD_LISTE = $(ROLSTE:%=$(SELPRUCE)/gboard%)
+GBOARD_ZIP = $(SELPRUCE)/$(CMENE)-$(NAMCU)-gboard.zip
 GBOARD_ZBASU = { \
 	echo '\# Gboard Dictionary version:2'; \
 	echo '\# Gboard Dictionary format:shortcut	word	language_tag	pos_tag'; \
@@ -122,64 +124,64 @@ gboard: $(GBOARD_ZIP)
 $(GBOARD_ZIP): $(GBOARD_LISTE)
 	$(ZIP)
 
-$(GIMRAF:%=$(VASRU)/gboard%): $(GIMRAFSTE)
+$(GIMRAF:%=$(SELPRUCE)/gboard%): $(GIMRAFSTE)
 	$(GBOARD_XIPA)
 
-$(RAFGIM:%=$(VASRU)/gboard%): $(GIMRAFSTE)
+$(RAFGIM:%=$(SELPRUCE)/gboard%): $(GIMRAFSTE)
 	$(GBOARD_XIRE)
 
-$(MAHORAF:%=$(VASRU)/gboard%): $(MAHORAFSTE)
+$(MAHORAF:%=$(SELPRUCE)/gboard%): $(MAHORAFSTE)
 	$(GBOARD_XIPA)
 
-$(RAFMAHO:%=$(VASRU)/gboard%): $(MAHORAFSTE)
+$(RAFMAHO:%=$(SELPRUCE)/gboard%): $(MAHORAFSTE)
 	$(GBOARD_XIRE)
 
-$(GIMBAI:%=$(VASRU)/gboard%): $(BAISTE)
+$(GIMBAI:%=$(SELPRUCE)/gboard%): $(BAISTE)
 	$(GBOARD_XIPA)
 
-$(BAIGIM:%=$(VASRU)/gboard%): $(BAISTE)
+$(BAIGIM:%=$(SELPRUCE)/gboard%): $(BAISTE)
 	$(GBOARD_XIRE)
 
-$(GIMFAHA:%=$(VASRU)/gboard%): $(FAHASTE)
+$(GIMFAHA:%=$(SELPRUCE)/gboard%): $(FAHASTE)
 	$(GBOARD_XIPA)
 
-$(FAHAGIM:%=$(VASRU)/gboard%): $(FAHASTE)
+$(FAHAGIM:%=$(SELPRUCE)/gboard%): $(FAHASTE)
 	$(GBOARD_XIRE)
 
-$(GIMPUR:%=$(VASRU)/gboard%): $(PURSTE)
+$(GIMPUR:%=$(SELPRUCE)/gboard%): $(PURSTE)
 	$(GBOARD_XIPA)
 
-$(PURGIM:%=$(VASRU)/gboard%): $(PURSTE)
+$(PURGIM:%=$(SELPRUCE)/gboard%): $(PURSTE)
 	$(GBOARD_XIRE)
 
-$(GIMVIHA:%=$(VASRU)/gboard%): $(VIHASTE)
+$(GIMVIHA:%=$(SELPRUCE)/gboard%): $(VIHASTE)
 	$(GBOARD_XIPA)
 
-$(VIHAGIM:%=$(VASRU)/gboard%): $(VIHASTE)
+$(VIHAGIM:%=$(SELPRUCE)/gboard%): $(VIHASTE)
 	$(GBOARD_XIRE)
 
-$(GIMTAHE:%=$(VASRU)/gboard%): $(TAHESTE)
+$(GIMTAHE:%=$(SELPRUCE)/gboard%): $(TAHESTE)
 	$(GBOARD_XIPA)
 
-$(TAHEGIM:%=$(VASRU)/gboard%): $(TAHESTE)
+$(TAHEGIM:%=$(SELPRUCE)/gboard%): $(TAHESTE)
 	$(GBOARD_XIRE)
 
-$(GIMROI:%=$(VASRU)/gboard%): $(ROISTE)
+$(GIMROI:%=$(SELPRUCE)/gboard%): $(ROISTE)
 	$(GBOARD_XIPA)
 
-$(ROIGIM:%=$(VASRU)/gboard%): $(ROISTE)
+$(ROIGIM:%=$(SELPRUCE)/gboard%): $(ROISTE)
 	$(GBOARD_XIRE)
 
-$(GIMNUN:%=$(VASRU)/gboard%): $(NUNSTE)
+$(GIMNUN:%=$(SELPRUCE)/gboard%): $(NUNSTE)
 	$(GBOARD_XIPA)
 
-$(NUNGIM:%=$(VASRU)/gboard%): $(NUNSTE)
+$(NUNGIM:%=$(SELPRUCE)/gboard%): $(NUNSTE)
 	$(GBOARD_XIRE)
 
-$(GIMCAI:%=$(VASRU)/gboard%): $(CAISTE)
+$(GIMCAI:%=$(SELPRUCE)/gboard%): $(CAISTE)
 	$(GBOARD_XIPA)
 
-$(CAIGIM:%=$(VASRU)/gboard%): $(CAISTE)
+$(CAIGIM:%=$(SELPRUCE)/gboard%): $(CAISTE)
 	$(GBOARD_XIRE)
 
 # drata
@@ -201,7 +203,7 @@ zahurehu: vimcu
 # =====
 
 gubni: ro
-	glab release create '$(NAMCU)' --name ".i li $(NAMCU) velfarvi sinxa" --notes "$$(git tag -l '$(NAMCU)' --format='%(contents)')" --no-update --use-package-registry $$(find "$(VASRU)" -name '*.zip' -type f | LANG=C sort)
+	glab release create '$(NAMCU)' --name ".i li $(NAMCU) velfarvi sinxa" --notes "$$(git tag -l '$(NAMCU)' --format='%(contents)')" --no-update --use-package-registry $$(find "$(SELPRUCE)" -name '*.zip' -type f | LANG=C sort)
 
 mipri:
 	if glab release view '$(NAMCU)' >/dev/null 2>&1; then \
