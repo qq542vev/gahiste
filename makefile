@@ -16,10 +16,10 @@
 ##   author - <qq542vev at https://purl.org/meta/me/>
 ##   version - 0.5.0
 ##   created - 2026-03-28
-##   modified - 2026-04-05
+##   modified - 2026-04-06
 ##   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
 ##   license - <GPL-3.0-only at https://www.gnu.org/licenses/gpl-3.0.txt>
-##   depends - awk, echo, find, git, glab, rm, sort
+##   depends - awk, echo, find, git, glab, rm, sort, zip
 ##   conforms-to - <https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html>
 ##
 ## See Also:
