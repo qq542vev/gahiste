@@ -20,16 +20,26 @@ See Also:
 
 # .i ga'iste
 
-.i le ga'iste cu me lo liste noi la'o zoi IME zoi pilno ke'a lo nu galfi lo rafsi .e lo bais zei valsi .e lo bais zei valsi .e lo pus zei valsi .e lo fa'as zei valsi lo lojbo valsi soi vo'e vo'i .i ka'e frili galfi mu'u la'o zoi
+.i le ga'iste cu me lo liste noi la'o zoi IME zoi pilno ke'a lo nu galfi lo lojbo valsi lo lojbo valsi soi vo'e vo'i .i ka'e frili galfi mu'u la'o zoi
+
+rafsi ⇄ gismu
 
 ```
 pre  ⇄ prenu
-jbo  ⇄ lojbo
+cne  ⇄ cenba
 muj  ⇄ munje
 mu'e ⇄ munje
-mov  ⇄ mo'i
-pav  ⇄ pa
 ```
+
+rafsi ⇄ cmavo
+
+```
+pav ⇄ pa
+jax ⇄ jai
+mov ⇄ mo'i
+```
+
+BAI ⇄ gismu
 
 ```
 bai   ⇄ bapli
@@ -38,17 +48,63 @@ kai   ⇄ ckaji
 sekai ⇄ selckaji
 ```
 
+FAhA ⇄ gismu
+
 ```
-du'u ⇄ bridi
+vu'a stici
+ru'u sruri
+te'e korvi
+to'o dukti
+```
+
+PU ⇄ gismu
+
+```
+pu ⇄ purci
+ca ⇄ cabna
+ba ⇄ balvi
+```
+
+VIhA ⇄ gismu
+
+```
+vi'i ⇄ linji
+vi'a ⇄ plita
+vi'u ⇄ canlu
+vi'e ⇄ vonca'u
+```
+
+TAhE ⇄ gismu
+
+```
+di'i    ⇄ dikni
+na'o    ⇄ cafne
+ru'inai ⇄ tolranji
+ta'enai ⇄ toltcaci
+```
+
+ROI ⇄ gismu
+
+```
+roi  ⇄ rapli
+re'u ⇄ krefu
+```
+
+NU ⇄ gismu
+
+```
 nu   ⇄ fasnu
-ka   ⇄ ckaji
+mu'e ⇄ mulno
+jei  ⇄ jetnu
 su'u ⇄ sucta
 ```
 
+CAI ⇄ gismu
+
 ```
-pu purci
-ca cabna
-ba balvi
+cai  ⇄ carmi
+cu'i ⇄ nutli
+pei  ⇄ preti
 ```
 
 zoi
