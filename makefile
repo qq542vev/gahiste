@@ -19,7 +19,7 @@
 ##   modified - 2026-04-06
 ##   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
 ##   license - <GPL-3.0-only at https://www.gnu.org/licenses/gpl-3.0.txt>
-##   depends - awk, curl, echo, find, git, glab, rm, sort, zip
+##   depends - awk, curl, echo, find, git, glab, rm, shellspec, sort, zip
 ##   conforms-to - <https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html>
 ##
 ## See Also:
@@ -32,7 +32,7 @@
 
 .POSIX:
 
-.PHONY: ro gboard vimcu zahurehu gubni mipri sidju velfarvi
+.PHONY: ro gboard cipra terpruce-cipra selpruce-cipra vimcu zahurehu gubni mipri sidju velfarvi
 
 .SILENT: sidju velfarvi
 
@@ -191,6 +191,17 @@ $(CAIGIM:%=$(SELPRUCE)/gboard%): $(CAISTE)
 LICENSE.txt:
 	curl -sSfLo '$(@)' -- 'https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt'
 
+# cipra
+# =====
+
+cipra: terpruce-cipra selpruce-cipra
+
+terpruce-cipra:
+	VASRU='$(TERPRUCE)' shellspec spec/tsv-zei-cipra_spec.sh
+
+selpruce-cipra: ro
+	VASRU='$(SELPRUCE)' shellspec spec/selpruce
+
 # vimcu
 # =====
 
@@ -223,6 +234,11 @@ sidju:
 	echo "TARGET:"
 	echo "  ro       zbasu ro da"
 	echo "  gboard   zbasu lo se pilno be la'o zoi Gboard zoi"
+	echo "  cipra    ro da te cipra"
+	echo "  terpruce-cipra"
+	echo "           lo te pruce cu te cipra"
+	echo "  selpruce-cipra"
+	echo "           lo se pruce cu te cipra"
 	echo "  vimcu    vimcu lo se zbasu"
 	echo "  zahurehu za'u re'u zbasu"
 	echo "  gubni    lo se zbasu cu co'a gubni"
