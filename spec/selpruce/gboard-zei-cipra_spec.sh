@@ -30,17 +30,17 @@ Describe '.i lo gboard zei liste cu te cipra'
 			BEGIN {
 				morna_xipa = morna_xire = "^([a-gi-pr-vx-z]|([aeiou](\047[aeiou])+))+$"
 				jalge = 0
+
+				if(ARGV[1] ~ /[^\/]+-at-[^\/]+$/) {
+					sub(/\^/, "^@", morna_xipa)
+				} else if(ARGV[1] ~ /[^\/]+-bs-[^\/]+$/) {
+					sub(/\^/, "^\\\\", morna_xipa)
+				} else if(ARGV[1] ~ /[^\/]+-em-[^\/]+$/) {
+					sub(/\^/, "^!", morna_xipa)
+				}
 			}
 
 			NR == 1 {
-				if(0 < index(FILENAME, "-at-")) {
-					sub(/\^/, "^@", morna_xipa)
-				} else if(0 < index(FILENAME, "-bs-")) {
-					sub(/\^/, "^\\\\", morna_xipa)
-				} else if(0 < index(FILENAME, "-em-")) {
-					sub(/\^/, "^!", morna_xipa)
-				}
-
 				if($0 != "# Gboard Dictionary version:2") {
 					printf("fliba %d (version line): [%s]\n", NR, $0)
 					jalge = 1
@@ -54,6 +54,7 @@ Describe '.i lo gboard zei liste cu te cipra'
 					printf("fliba %d (format line): [%s]\n", NR, $0)
 					jalge = 1
 				}
+
 				next
 			}
 
