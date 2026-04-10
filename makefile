@@ -57,6 +57,9 @@ TAHESTE = $(TERPRUCE)/tahe.tsv
 ROISTE = $(TERPRUCE)/roi.tsv
 NUNSTE = $(TERPRUCE)/nu.tsv
 CAISTE = $(TERPRUCE)/cai.tsv
+BAHESTE = $(TERPRUCE)/bahe.tsv
+FAHOSTE = $(TERPRUCE)/faho.tsv
+NAHESTE = $(TERPRUCE)/nahe.tsv
 
 # cmene morna
 # -----------
@@ -82,7 +85,13 @@ GIMNUN = $(ROLSINXA:%=-%-gismu-nu.txt)
 NUNGIM = $(ROLSINXA:%=-%-nu-gismu.txt)
 GIMCAI = $(ROLSINXA:%=-%-gismu-cai.txt)
 CAIGIM = $(ROLSINXA:%=-%-cai-gismu.txt)
-ROLSTE = $(GIMRAF) $(RAFGIM) $(MAHORAF) $(RAFMAHO) $(GIMBAI) $(BAIGIM) $(GIMFAHA) $(FAHAGIM) $(GIMPUR) $(PURGIM) $(GIMVIHA) $(VIHAGIM) $(GIMTAHE) $(TAHEGIM) $(GIMROI) $(ROIGIM) $(GIMNUN) $(NUNGIM) $(GIMCAI) $(CAIGIM)
+GIMBAHE = $(ROLSINXA:%=-%-gismu-bahe.txt)
+BAHEGIM = $(ROLSINXA:%=-%-bahe-gismu.txt)
+GIMFAHO = $(ROLSINXA:%=-%-gismu-faho.txt)
+FAHOGIM = $(ROLSINXA:%=-%-faho-gismu.txt)
+GIMNAHE = $(ROLSINXA:%=-%-gismu-tohe.txt)
+NAHEGIM = $(ROLSINXA:%=-%-tohe-gismu.txt)
+ROLSTE = $(GIMRAF) $(RAFGIM) $(MAHORAF) $(RAFMAHO) $(GIMBAI) $(BAIGIM) $(GIMFAHA) $(FAHAGIM) $(GIMPUR) $(PURGIM) $(GIMVIHA) $(VIHAGIM) $(GIMTAHE) $(TAHEGIM) $(GIMROI) $(ROIGIM) $(GIMNUN) $(NUNGIM) $(GIMCAI) $(CAIGIM) $(GIMBAHE) $(BAHEGIM) $(GIMFAHO) $(FAHOGIM) $(GIMNAHE) $(NAHEGIM)
 
 # minde
 # -----
@@ -183,6 +192,24 @@ $(GIMCAI:%=$(SELPRUCE)/gboard%): $(CAISTE)
 	$(GBOARD_XIPA)
 
 $(CAIGIM:%=$(SELPRUCE)/gboard%): $(CAISTE)
+	$(GBOARD_XIRE)
+
+$(GIMBAHE:%=$(SELPRUCE)/gboard%): $(BAHESTE)
+	$(GBOARD_XIPA)
+
+$(BAHEGIM:%=$(SELPRUCE)/gboard%): $(BAHESTE)
+	$(GBOARD_XIRE)
+
+$(GIMFAHO:%=$(SELPRUCE)/gboard%): $(FAHOSTE)
+	$(GBOARD_XIPA)
+
+$(FAHOGIM:%=$(SELPRUCE)/gboard%): $(FAHOSTE)
+	$(GBOARD_XIRE)
+
+$(GIMNAHE:%=$(SELPRUCE)/gboard%): $(NAHESTE)
+	$(GBOARD_XIPA)
+
+$(NAHEGIM:%=$(SELPRUCE)/gboard%): $(NAHESTE)
 	$(GBOARD_XIRE)
 
 # drata
