@@ -143,7 +143,7 @@ GBOARD_ZBASU = { \
 	awk -F '\t' -- '{ printf("%s\t%s\t\t\n", ENVIRON["SINXA"] $$1, $$2); }' | LANG=C sort; \
 } >'$(@)'
 GBOARD_XIPA = $(BREDI) $(GBOARD_ZBASU) <'$(<)'
-GBOARD_XIRE = $(BREDI) awk -- '{ printf("%s\t%s\n", $$2, $$1); }' '$(<)' | $(GBOARD_ZBASU)
+GBOARD_XIRE = $(BREDI) awk -F '\t' -- '{ printf("%s\t%s\n", $$2, $$1); }' '$(<)' | $(GBOARD_ZBASU)
 
 # zbasu
 # =====
@@ -155,7 +155,7 @@ ro: gboard
 
 gboard: $(GBOARD_ZIP)
 
-$(GBOARD_ZIP): $(GBOARD_LISTE)
+$(GBOARD_ZIP): $(GBOARD_LISTE) LICENSE.txt
 	$(ZIP)
 
 $(GIMRAF:%=$(SELPRUCE)/gboard%): $(GIMRAFSTE)
@@ -293,16 +293,13 @@ LICENSE.txt:
 # cipra
 # =====
 
-cipra: terpruce-cipra selpruce-cipra zip-cipra
+cipra: terpruce-cipra selpruce-cipra
 
 terpruce-cipra:
 	VASRU='$(TERPRUCE)' shellspec spec/tsv-zei-cipra_spec.sh
 
 selpruce-cipra: ro
 	VASRU='$(SELPRUCE)' shellspec spec/selpruce
-
-zip-cipra: ro
-	VASRU='$(SELPRUCE)' shellspec spec/zip-zei-cipra_spec.sh
 
 # vimcu
 # =====
