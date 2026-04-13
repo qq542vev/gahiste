@@ -14,9 +14,9 @@
 ##
 ##   id - cb29c2da-5cf5-4032-a0ce-bfbc95a8d927
 ##   author - <qq542vev at https://purl.org/meta/me/>
-##   version - 0.6.1
+##   version - 0.7.0
 ##   created - 2026-03-28
-##   modified - 2026-04-06
+##   modified - 2026-04-13
 ##   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
 ##   license - <GPL-3.0-only at https://www.gnu.org/licenses/gpl-3.0.txt>
 ##   depends - awk, curl, echo, find, git, glab, rm, shellspec, sort, zip
@@ -49,6 +49,11 @@ TERPRUCE = terpruce
 
 GIMRAFSTE = $(TERPRUCE)/gimrafsi.tsv
 MAHORAFSTE = $(TERPRUCE)/mahorafsi.tsv
+ZEISTE = $(TERPRUCE)/zei.tsv
+BORSTE = $(TERPRUCE)/bo.tsv
+COLSTE = $(TERPRUCE)/co.tsv
+LAHESTE = $(TERPRUCE)/lahe.tsv
+SOISTE = $(TERPRUCE)/soi.tsv
 BAISTE = $(TERPRUCE)/bai.tsv
 FAHASTE = $(TERPRUCE)/faha.tsv
 PURSTE = $(TERPRUCE)/pu.tsv
@@ -57,9 +62,12 @@ TAHESTE = $(TERPRUCE)/tahe.tsv
 ROISTE = $(TERPRUCE)/roi.tsv
 NUNSTE = $(TERPRUCE)/nu.tsv
 CAISTE = $(TERPRUCE)/cai.tsv
+GAHOSTE = $(TERPRUCE)/gaho.tsv
+NARSTE = $(TERPRUCE)/na.tsv
+NAHESTE = $(TERPRUCE)/nahe.tsv
+BUHISTE = $(TERPRUCE)/bu.tsv
 BAHESTE = $(TERPRUCE)/bahe.tsv
 FAHOSTE = $(TERPRUCE)/faho.tsv
-NAHESTE = $(TERPRUCE)/nahe.tsv
 
 # cmene morna
 # -----------
@@ -69,6 +77,16 @@ GIMRAF = $(ROLSINXA:%=-%-gismu-rafsi.txt)
 RAFGIM = $(ROLSINXA:%=-%-rafsi-gismu.txt)
 MAHORAF = $(ROLSINXA:%=-%-cmavo-rafsi.txt)
 RAFMAHO = $(ROLSINXA:%=-%-rafsi-cmavo.txt)
+GIMZEI = $(ROLSINXA:%=-%-gismu-zei.txt)
+ZEIGIM = $(ROLSINXA:%=-%-zei-gismu.txt)
+GIMBOR = $(ROLSINXA:%=-%-gismu-bor.txt)
+BORGIM = $(ROLSINXA:%=-%-bor-gismu.txt)
+GIMCOL = $(ROLSINXA:%=-%-gismu-col.txt)
+COLGIM = $(ROLSINXA:%=-%-col-gismu.txt)
+GIMLAHE = $(ROLSINXA:%=-%-gismu-lahe.txt)
+LAHEGIM = $(ROLSINXA:%=-%-lahe-gismu.txt)
+GIMSOI = $(ROLSINXA:%=-%-gismu-soi.txt)
+SOIGIM = $(ROLSINXA:%=-%-soi-gismu.txt)
 GIMBAI = $(ROLSINXA:%=-%-gismu-bai.txt)
 BAIGIM = $(ROLSINXA:%=-%-bai-gismu.txt)
 GIMFAHA = $(ROLSINXA:%=-%-gismu-faha.txt)
@@ -85,13 +103,19 @@ GIMNUN = $(ROLSINXA:%=-%-gismu-nu.txt)
 NUNGIM = $(ROLSINXA:%=-%-nu-gismu.txt)
 GIMCAI = $(ROLSINXA:%=-%-gismu-cai.txt)
 CAIGIM = $(ROLSINXA:%=-%-cai-gismu.txt)
+GIMGAHO = $(ROLSINXA:%=-%-gismu-gaho.txt)
+GAHOGIM = $(ROLSINXA:%=-%-gaho-gismu.txt)
+GIMNAR = $(ROLSINXA:%=-%-gismu-na.txt)
+NARGIM = $(ROLSINXA:%=-%-na-gismu.txt)
+GIMNAHE = $(ROLSINXA:%=-%-gismu-nahe.txt)
+NAHEGIM = $(ROLSINXA:%=-%-nahe-gismu.txt)
+GIMBUHI = $(ROLSINXA:%=-%-gismu-bu.txt)
+BUHIGIM = $(ROLSINXA:%=-%-bu-gismu.txt)
 GIMBAHE = $(ROLSINXA:%=-%-gismu-bahe.txt)
 BAHEGIM = $(ROLSINXA:%=-%-bahe-gismu.txt)
 GIMFAHO = $(ROLSINXA:%=-%-gismu-faho.txt)
 FAHOGIM = $(ROLSINXA:%=-%-faho-gismu.txt)
-GIMNAHE = $(ROLSINXA:%=-%-gismu-tohe.txt)
-NAHEGIM = $(ROLSINXA:%=-%-tohe-gismu.txt)
-ROLSTE = $(GIMRAF) $(RAFGIM) $(MAHORAF) $(RAFMAHO) $(GIMBAI) $(BAIGIM) $(GIMFAHA) $(FAHAGIM) $(GIMPUR) $(PURGIM) $(GIMVIHA) $(VIHAGIM) $(GIMTAHE) $(TAHEGIM) $(GIMROI) $(ROIGIM) $(GIMNUN) $(NUNGIM) $(GIMCAI) $(CAIGIM) $(GIMBAHE) $(BAHEGIM) $(GIMFAHO) $(FAHOGIM) $(GIMNAHE) $(NAHEGIM)
+ROLSTE = $(GIMRAF) $(RAFGIM) $(MAHORAF) $(RAFMAHO) $(GIMZEI) $(ZEIGIM) $(GIMBOR) $(BORGIM) $(GIMCOL) $(COLGIM) $(GIMLAHE) $(LAHEGIM) $(GIMSOI) $(SOIGIM) $(GIMBAI) $(BAIGIM) $(GIMFAHA) $(FAHAGIM) $(GIMPUR) $(PURGIM) $(GIMVIHA) $(VIHAGIM) $(GIMTAHE) $(TAHEGIM) $(GIMROI) $(ROIGIM) $(GIMNUN) $(NUNGIM) $(GIMCAI) $(CAIGIM) $(GIMGAHO) $(GAHOGIM) $(GIMNAR) $(NARGIM) $(GIMNAHE) $(NAHEGIM) $(GIMBUHI) $(BUHIGIM) $(GIMBAHE) $(BAHEGIM) $(GIMFAHO) $(FAHOGIM)
 
 # minde
 # -----
@@ -146,6 +170,36 @@ $(MAHORAF:%=$(SELPRUCE)/gboard%): $(MAHORAFSTE)
 $(RAFMAHO:%=$(SELPRUCE)/gboard%): $(MAHORAFSTE)
 	$(GBOARD_XIRE)
 
+$(GIMZEI:%=$(SELPRUCE)/gboard%): $(ZEISTE)
+	$(GBOARD_XIPA)
+
+$(ZEIGIM:%=$(SELPRUCE)/gboard%): $(ZEISTE)
+	$(GBOARD_XIRE)
+
+$(GIMBOR:%=$(SELPRUCE)/gboard%): $(BORSTE)
+	$(GBOARD_XIPA)
+
+$(BORGIM:%=$(SELPRUCE)/gboard%): $(BORSTE)
+	$(GBOARD_XIRE)
+
+$(GIMCOL:%=$(SELPRUCE)/gboard%): $(COLSTE)
+	$(GBOARD_XIPA)
+
+$(COLGIM:%=$(SELPRUCE)/gboard%): $(COLSTE)
+	$(GBOARD_XIRE)
+
+$(GIMLAHE:%=$(SELPRUCE)/gboard%): $(LAHESTE)
+	$(GBOARD_XIPA)
+
+$(LAHEGIM:%=$(SELPRUCE)/gboard%): $(LAHESTE)
+	$(GBOARD_XIRE)
+
+$(GIMSOI:%=$(SELPRUCE)/gboard%): $(SOISTE)
+	$(GBOARD_XIPA)
+
+$(SOIGIM:%=$(SELPRUCE)/gboard%): $(SOISTE)
+	$(GBOARD_XIRE)
+
 $(GIMBAI:%=$(SELPRUCE)/gboard%): $(BAISTE)
 	$(GBOARD_XIPA)
 
@@ -194,6 +248,30 @@ $(GIMCAI:%=$(SELPRUCE)/gboard%): $(CAISTE)
 $(CAIGIM:%=$(SELPRUCE)/gboard%): $(CAISTE)
 	$(GBOARD_XIRE)
 
+$(GIMGAHO:%=$(SELPRUCE)/gboard%): $(GAHOSTE)
+	$(GBOARD_XIPA)
+
+$(GAHOGIM:%=$(SELPRUCE)/gboard%): $(GAHOSTE)
+	$(GBOARD_XIRE)
+
+$(GIMNAR:%=$(SELPRUCE)/gboard%): $(NARSTE)
+	$(GBOARD_XIPA)
+
+$(NARGIM:%=$(SELPRUCE)/gboard%): $(NARSTE)
+	$(GBOARD_XIRE)
+
+$(GIMNAHE:%=$(SELPRUCE)/gboard%): $(NAHESTE)
+	$(GBOARD_XIPA)
+
+$(NAHEGIM:%=$(SELPRUCE)/gboard%): $(NAHESTE)
+	$(GBOARD_XIRE)
+
+$(GIMBUHI:%=$(SELPRUCE)/gboard%): $(BUHISTE)
+	$(GBOARD_XIPA)
+
+$(BUHIGIM:%=$(SELPRUCE)/gboard%): $(BUHISTE)
+	$(GBOARD_XIRE)
+
 $(GIMBAHE:%=$(SELPRUCE)/gboard%): $(BAHESTE)
 	$(GBOARD_XIPA)
 
@@ -206,12 +284,6 @@ $(GIMFAHO:%=$(SELPRUCE)/gboard%): $(FAHOSTE)
 $(FAHOGIM:%=$(SELPRUCE)/gboard%): $(FAHOSTE)
 	$(GBOARD_XIRE)
 
-$(GIMNAHE:%=$(SELPRUCE)/gboard%): $(NAHESTE)
-	$(GBOARD_XIPA)
-
-$(NAHEGIM:%=$(SELPRUCE)/gboard%): $(NAHESTE)
-	$(GBOARD_XIRE)
-
 # drata
 # -----
 
@@ -221,13 +293,16 @@ LICENSE.txt:
 # cipra
 # =====
 
-cipra: terpruce-cipra selpruce-cipra
+cipra: terpruce-cipra selpruce-cipra zip-cipra
 
 terpruce-cipra:
 	VASRU='$(TERPRUCE)' shellspec spec/tsv-zei-cipra_spec.sh
 
 selpruce-cipra: ro
 	VASRU='$(SELPRUCE)' shellspec spec/selpruce
+
+zip-cipra: ro
+	VASRU='$(SELPRUCE)' shellspec spec/zip-zei-cipra_spec.sh
 
 # vimcu
 # =====

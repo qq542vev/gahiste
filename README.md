@@ -6,9 +6,9 @@ Metadata:
 
   id - be6a6293-5a7e-4504-8495-fc4394db100b
   author - <qq542vev at https://purl.org/meta/me/>
-  version - 0.1.3
+  version - 0.1.4
   created - 2026-04-01
-  modified - 2026-04-06
+  modified - 2026-04-13
   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
   license - <CC-BY-SA-4.0 at https://creativecommons.org/licenses/by-sa/4.0/>
 
@@ -22,7 +22,7 @@ See Also:
 
 .i le ga'iste cu me lo liste noi la'o zoi IME zoi pilno ke'a lo nu galfi lo lojbo valsi lo lojbo valsi soi vo'e vo'i .i ka'e frili galfi mu'u la'o zoi
 
-rafsi ⇄ gismu
+gimrafsi ⇄ gismu
 
 ```
 pre  ⇄ prenu
@@ -31,12 +31,45 @@ muj  ⇄ munje
 mu'e ⇄ munje
 ```
 
-rafsi ⇄ cmavo
+ma'orafsi ⇄ cmavo
 
 ```
 pav ⇄ pa
 jax ⇄ jai
 mov ⇄ mo'i
+```
+
+ZEI ⇄ gismu
+
+```
+zei ⇄ lujvo
+```
+
+BO ⇄ gismu
+
+```
+bo ⇄ jorne
+```
+
+CO ⇄ gismu
+
+```
+co ⇄ fatne
+```
+
+LAhE ⇄ gismu
+
+```
+cmima ⇄ lu'a
+selcmima ⇄ lu'i
+selsinxa ⇄ la'e
+sucta ⇄ tu'a
+```
+
+SOI ⇄ gismu
+
+```
+soi ⇄ simxu
 ```
 
 BAI ⇄ gismu
@@ -105,6 +138,48 @@ CAI ⇄ gismu
 cai  ⇄ carmi
 cu'i ⇄ nutli
 pei  ⇄ preti
+```
+
+GAhO ⇄ gismu
+
+```
+ga'o ⇄ ganlo
+ke'i ⇄ kalri
+```
+
+NA ⇄ gismu
+
+```
+na   ⇄ nafti
+ja'a ⇄ tolnafti
+```
+
+NAhE ⇄ gismu
+
+```
+na'e ⇄ drata
+to'e ⇄ dukti
+no'e ⇄ nutli
+je'a ⇄ tolnatfe
+```
+
+BU ⇄ gismu
+
+```
+bu ⇄ lerfu
+```
+
+BAhE ⇄ gismu
+
+```
+ba'e ⇄ basna
+za'e ⇄ zasni
+```
+
+FAhO ⇄ gismu
+
+```
+fa'o ⇄ fanmo
 ```
 
 zoi
